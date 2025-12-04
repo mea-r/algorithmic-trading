@@ -1,0 +1,14 @@
+name: algo_trading
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - jupyter
+  - yfinance
+  - pyarrow          # required for saving .parquet files
+  - pip

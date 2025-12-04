@@ -1,0 +1,11 @@
+# ignore data files (if a file size is too large, the git push will fail)
+data/raw/*
+data/clean/*
+*.csv
+*.parquet
+
+# ignore cache, should be stored locally
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
