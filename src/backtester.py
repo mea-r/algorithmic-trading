@@ -61,5 +61,16 @@ if __name__ == "__main__":
 
     results = run_backtest(data, strat)
 
-    results['Equity'].plot(title="SPY Backtest (MA crossover strat)")
+    initial_price = data['Close'].iloc[0]
+    initial_capital = 10000.0
+    results['Buy & Hold'] = (data['Close'] / initial_price) * initial_capital
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(results.index, results['Equity'], label='MA Crossover Strategy')
+    plt.plot(results.index, results['Buy & Hold'], label='Buy & Hold (SPY)')
+
+    plt.title("MA Crossover and Buy & Hold equity curves")
+    plt.ylabel("Portfolio Value ($)")
+    plt.legend()
+    plt.grid(True, alpha=0.3)
     plt.show()
