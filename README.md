@@ -1,8 +1,8 @@
 # algorithmic-trading
 
 ## File structure
-* `/data/raw` # csv files from yfinance (ignored by git)
-* `/data/clean` # processed parquet files (ignored by git)
+* `/data/raw` # csv files from yfinance 
+* `/data/clean` # processed parquet files 
 * `/notebooks` # shared notebooks for analysis
 * `/reports` # strategy pdfs and final deliverables
 * `/src` # main python package
@@ -21,7 +21,7 @@
 * **Otherwise (not recomended):** You can work separately and upload files manually to GitHub website, but this makes merging code difficult.
 
 **2. Setup**
-Run this command to make sure everyone has same dependencies:
+Run this command to make sure everyone has same dependencies (have to have anaconda installed):
 `conda env create -f environment.yml`.
 Then activate it:
 `conda activate algo_trading`

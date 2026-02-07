@@ -1,76 +1,78 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import yfinance as yf
-import sys
 import os
+import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from strategies.mean_reversion import mean_reversion_signals
 from strategies.ma_crossover import ma_crossover_signals
 
 
-class MACrossoverStrategy:
-    def generate_signals(self, data):
-        # use ma_crossover.py
-        return ma_crossover_signals(data, window=20)
+def run_backtest(df, commission=0.001, slippage=0.0002):
+    bt = df.copy().sort_values(['ticker', 'Date'])
+
+    # first we have to map the text signals to numeric
+    signal_map = {'BUY': 1, 'SELL': -1}
+    bt['signal_num'] = bt['signal'].map(signal_map).fillna(0)
+
+    # then calculate the strategy returns ( which is signal from t-1 applied to return at t)
+    bt['trade_signal'] = bt.groupby('ticker')['signal_num'].shift(1).fillna(0)
+
+    bt['raw_return'] = bt['trade_signal'] * bt['daily_return']
+
+    # calculate transaction costs (commission is by default 0.1% and slippage is 0.02%) and then handle the first trade of each ticker
+    bt['is_trading'] = bt.groupby('ticker')['trade_signal'].diff().abs().fillna(0)
+    total_cost_rate = commission + slippage
+    bt['costs'] = bt['is_trading'] * total_cost_rate
+
+    bt['net_return'] = bt['raw_return'] - bt['costs']
+
+    daily_perf = bt.groupby('Date')['net_return'].mean()
+
+    # then compute the curves
+    equity_curve = (1 + daily_perf).cumprod()
+    running_max = equity_curve.cummax()
+    drawdown_curve = (equity_curve - running_max) / running_max
+
+    return equity_curve, drawdown_curve
 
 
-def run_backtest(data, strategy):
-    df = strategy.generate_signals(data)
-
-    # simulate start with 10000 in cash
-    cash = 10000.0
-    shares = 0
-    history = []
-
-    for i in range(len(df)):
-        price = df.iloc[i]['Close']
-        signal = df.iloc[i]['signal']
-        date = df.index[i]
-
-        if signal == "BUY" and shares == 0:
-            # slippage (0.02%)
-            buy_price = price * 1.0002
-            # total transaction cost (0.1%)
-            max_cost = cash / 1.001
-            shares = max_cost / buy_price
-            cash = 0
-
-        elif signal == "SELL" and shares > 0:
-            sell_price = price * 0.9998
-            revenue = shares * sell_price
-
-            cash = revenue * 0.999
-            shares = 0
-
-        equity = cash + (shares * price)
-        history.append({'Date': date, 'Equity': equity})
-
-    return pd.DataFrame(history).set_index('Date')
-
-
-# to run and also plot the equity curve (for now, only does the MA crossover)
 if __name__ == "__main__":
-    data = yf.download("SPY", start="2015-01-01", end="2025-01-01", auto_adjust=True)
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    data_path = os.path.join(base_dir, 'data', 'clean', 'features.parquet')
 
-    # flatten data
-    if isinstance(data.columns, pd.MultiIndex):
-        data.columns = data.columns.get_level_values(0)
+    features = pd.read_parquet(data_path)
 
-    strat = MACrossoverStrategy()
+    # for now its using mean reversion and ma crossover, but when momentum strategy has been implmented i will add
+    # momentum in place of ma_crossover
 
-    results = run_backtest(data, strat)
+    mr_data = mean_reversion_signals(features)
+    mr_equity, mr_dd = run_backtest(mr_data)
 
-    initial_price = data['Close'].iloc[0]
-    initial_capital = 10000.0
-    results['Buy & Hold'] = (data['Close'] / initial_price) * initial_capital
+    ma_data = ma_crossover_signals(features)
+    ma_equity, ma_dd = run_backtest(ma_data)
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(results.index, results['Equity'], label='MA Crossover Strategy')
-    plt.plot(results.index, results['Buy & Hold'], label='Buy & Hold (SPY)')
+    # plots
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
 
-    plt.title("MA Crossover and Buy & Hold equity curves")
-    plt.ylabel("Portfolio Value ($)")
-    plt.legend()
-    plt.grid(True, alpha=0.3)
+    ax1.plot(mr_equity, label='Mean Reversion')
+    ax1.plot(ma_equity, label='MA Crossover')
+    ax1.set_title("Equity Curve (Vectorized Multi-Asset)")
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+
+    ax2.fill_between(mr_dd.index, mr_dd, label='Mean Reversion Drawdown', alpha=0.3)
+    ax2.fill_between(ma_dd.index, ma_dd, label='MA Crossover Drawdown', alpha=0.3)
+    ax2.set_title("Drawdown Curve")
+    ax2.legend()
+    ax2.grid(True, alpha=0.3)
+
+    plt.tight_layout()
+
+    figures_dir = os.path.join(base_dir, 'reports', 'figures')
+    save_path = os.path.join(figures_dir, 'backtest_results_ma_crossover_mean_reversion.png')
+    plt.savefig(save_path)
+    print(f"Plot saved to: {save_path}")
+
     plt.show()

@@ -10,8 +10,8 @@ def ma_crossover_signals(df, window=20, price_col=None):
     out["ma20"] = out[price_col].rolling(window=window).mean()
     out["signal"] = None
     valid = out["ma20"].notna()
-    out.loc[valid & (out[price_col] > out["ma20"]), "signal"] = "BUY"
-    out.loc[valid & (out[price_col] < out["ma20"]), "signal"] = "SELL"
+    out.loc[valid & (out[price_col].shift(1) > out["ma20"].shift(1)), "signal"] = "BUY"
+    out.loc[valid & (out[price_col].shift(1) < out["ma20"].shift(1)), "signal"] = "SELL"
     return out
     
 

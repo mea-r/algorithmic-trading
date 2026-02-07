@@ -17,8 +17,7 @@ def mean_reversion_signals(df, window=20, z_threshold=2, price_col=None):
     out["rolling_std"] = out[price_col].rolling(window=window).std()
     
     # Calculate z-score: z = (P - μ20) / σ20
-    out["z_score"] = (out[price_col] - out["rolling_mean"]) / out["rolling_std"]
-    
+    out["z_score"] = (out[price_col].shift(1) - out["rolling_mean"].shift(1)) / out["rolling_std"].shift(1)
     out["signal"] = None
     
     # Generate Signals
