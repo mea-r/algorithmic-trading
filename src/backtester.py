@@ -40,30 +40,43 @@ def run_backtest(df, commission=0.001, slippage=0.0002):
 
 if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    data_path = os.path.join(base_dir, 'data', 'clean', 'features.parquet')
+    data_path = os.path.join(base_dir, 'data', 'features_50.parquet')
 
-    features = pd.read_parquet(data_path)
+    features = pd.read_parquet(data_path, engine='fastparquet')
 
-    # for now its using mean reversion and ma crossover, but when momentum strategy has been implmented i will add
-    # momentum in place of ma_crossover
+    mom_data_path = os.path.join(base_dir, 'data', 'clean', 'momentum_signals.csv')
+    mom_df = pd.read_csv(mom_data_path)
+    mom_df['date'] = pd.to_datetime(mom_df['date'])
+
+    # have to add monthly signals onto each day (thats how the backtester works)
+    mom_df = mom_df.rename(columns={'date': 'Date', 'signal': 'csv_signal'})
+    mom_data = pd.merge(features, mom_df[['Date', 'ticker', 'csv_signal']],
+                        on=['Date', 'ticker'], how='left')
+
+    mom_data['csv_signal'] = mom_data.groupby('ticker')['csv_signal'].ffill().fillna(0)
+
+    # map for the backtester
+    type_map = {1: 'BUY', -1: 'SELL', 0: 'HOLD'}
+
+    # now run for both strategies
+
+    mom_data['signal'] = mom_data['csv_signal'].map(type_map)
+    mom_equity, mom_dd = run_backtest(mom_data)
 
     mr_data = mean_reversion_signals(features)
     mr_equity, mr_dd = run_backtest(mr_data)
-
-    ma_data = ma_crossover_signals(features)
-    ma_equity, ma_dd = run_backtest(ma_data)
 
     # plots
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10), sharex=True)
 
     ax1.plot(mr_equity, label='Mean Reversion')
-    ax1.plot(ma_equity, label='MA Crossover')
+    ax1.plot(mom_equity, label='Momentum 12')
     ax1.set_title("Equity Curve (Vectorized Multi-Asset)")
     ax1.legend()
     ax1.grid(True, alpha=0.3)
 
     ax2.fill_between(mr_dd.index, mr_dd, label='Mean Reversion Drawdown', alpha=0.3)
-    ax2.fill_between(ma_dd.index, ma_dd, label='MA Crossover Drawdown', alpha=0.3)
+    ax2.fill_between(mom_dd.index, mom_dd, label='Momentum 12 Drawdown', alpha=0.3)
     ax2.set_title("Drawdown Curve")
     ax2.legend()
     ax2.grid(True, alpha=0.3)
@@ -71,7 +84,7 @@ if __name__ == "__main__":
     plt.tight_layout()
 
     figures_dir = os.path.join(base_dir, 'reports', 'figures')
-    save_path = os.path.join(figures_dir, 'backtest_results_ma_crossover_mean_reversion.png')
+    save_path = os.path.join(figures_dir, 'backtest_results_mom_mean_reversion.png')
     plt.savefig(save_path)
     print(f"Plot saved to: {save_path}")
 

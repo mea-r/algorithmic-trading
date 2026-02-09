@@ -3,7 +3,7 @@ def mean_reversion_signals(df, window=20, z_threshold=2, price_col=None):
     out = df.copy()
     
     if price_col is None:
-        for c in ("close", "Close", "Adj Close", "adjclose"):
+        for c in ("close", "Close", "Adj Close", "adjclose", "adj_close"):
             if c in out.columns:
                 price_col = c
                 break

@@ -1,7 +1,11 @@
 import pandas as pd
 import numpy as np
+import os
 
-raw = pd.read_csv("raw.csv", header=None)
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+data_path = os.path.join(base_dir, 'data', 'raw', 'raw.csv')
+
+raw = pd.read_csv(data_path, header=None)
 
 fields = raw.iloc[0]
 tickers = raw.iloc[1]
