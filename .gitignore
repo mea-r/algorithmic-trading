@@ -12,3 +12,6 @@ __pycache__/
 **/key*
 *key.txt
 **/api_key*
+**/env*
+**show*
+*nohup.out
