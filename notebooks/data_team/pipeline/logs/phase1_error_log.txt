@@ -1,0 +1,177 @@
+
+ 
+Traceback information (23-04-2026 at 22:06:21, fail count: 1): 
+Ticker: SPY 
+Date: 2023-05-08 00:00:00 
+Data: {'items': '0', 'sentiment_score_definition': 'x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish', 'relevance_score_definition': '0 < x <= 1, with a higher score indicating higher relevance.', 'feed': []} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/requests/models.py", line 978, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 81, in get_data
+    data = response.json()
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/requests/models.py", line 982, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+ 
+Traceback information (23-04-2026 at 22:50:42, fail count: 1): 
+Ticker: QUBT 
+Date: 2021-08-02 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (23-04-2026 at 23:21:18, fail count: 1): 
+Ticker: IBM 
+Date: 2022-06-14 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (23-04-2026 at 23:37:30, fail count: 1): 
+Ticker: IBM 
+Date: 2025-04-27 00:00:00 
+Data: {'items': '0', 'sentiment_score_definition': 'x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish', 'relevance_score_definition': '0 < x <= 1, with a higher score indicating higher relevance.', 'feed': []} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/requests/models.py", line 978, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 81, in get_data
+    data = response.json()
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/requests/models.py", line 982, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+ 
+Traceback information (23-04-2026 at 23:42:26, fail count: 1): 
+Ticker: IBM 
+Date: 2026-02-08 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 02:30:45, fail count: 1): 
+Ticker: MSFT 
+Date: 2022-03-12 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 02:34:26, fail count: 1): 
+Ticker: MSFT 
+Date: 2022-09-30 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 04:49:35, fail count: 1): 
+Ticker: INTC 
+Date: 2021-12-08 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 10:28:04, fail count: 1): 
+Ticker: JPM 
+Date: 2022-04-21 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 12:36:40, fail count: 1): 
+Ticker: XOM 
+Date: 2025-12-11 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 14:51:59, fail count: 1): 
+Ticker: MCD 
+Date: 2026-03-20 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 15:47:03, fail count: 1): 
+Ticker: WMT 
+Date: 2021-07-30 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'
+
+ 
+Traceback information (24-04-2026 at 18:13:48, fail count: 1): 
+Ticker: LVMUY 
+Date: 2024-06-06 00:00:00 
+Data: {} 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/news_aggregation.py", line 82, in get_data
+    news = data["feed"]
+           ~~~~^^^^^^^^
+KeyError: 'feed'

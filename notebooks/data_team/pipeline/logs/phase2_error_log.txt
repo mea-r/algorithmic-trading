@@ -1,0 +1,494 @@
+
+ 
+Traceback information (24-04-2026 at 23:39:50, fail count: 1): 
+Ticker: IBM 
+Headline: AMD Unveils Helios AI Platform with MI450X GPUs, Oracle Plans 50K Deployment - WebProNews 
+Headline ID: d5286aec 
+Publication date: 2025-10-18 21:43:14 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '504 Gateway Time-out' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '504 Gateway Time-out' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Amz CF ID: cr1btqOf067jtAlWu8uJNrlllaumGodftfhN_210FBK0a1oGnbhmqA==)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504
+
+ 
+Traceback information (24-04-2026 at 23:41:08, fail count: 1): 
+Ticker: IBM 
+Headline: CONCRETE PUMPING HOLDINGS, INC. $BBCP 
+Headline ID: 62be7170 
+Publication date: 2025-10-19 07:25:53 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ebe374-13df0162593f412935faac01;6c742d93-becf-4302-a627-5e537adb0ca3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 01:08:59, fail count: 1): 
+Ticker: NVDA 
+Headline: Prosperity Wealth Management Inc. Purchases 2,189 Shares of NVIDIA Corporation $NVDA 
+Headline ID: df84af80 
+Publication date: 2025-11-30 10:23:43 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ebf80b-1dae2bff1e0c5add737200f0;caf01257-327a-4d3e-a689-a4837258e359)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 01:09:29, fail count: 2): 
+Ticker: NVDA 
+Headline: Prosperity Wealth Management Inc. Purchases 2,189 Shares of NVIDIA Corporation $NVDA 
+Headline ID: df84af80 
+Publication date: 2025-11-30 10:23:43 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ebf829-6a482c30369b2bea5731ef8d;bc058e5a-edbf-4f65-ab40-a141df699904)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 01:10:29, fail count: 3): 
+Ticker: NVDA 
+Headline: Prosperity Wealth Management Inc. Purchases 2,189 Shares of NVIDIA Corporation $NVDA 
+Headline ID: df84af80 
+Publication date: 2025-11-30 10:23:43 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ebf865-333600b11cbc132c64ee12d7;b0cddcc4-b6da-49d7-8763-6af1ef25d56b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 02:09:22, fail count: 1): 
+Ticker: AAPL 
+Headline: What Exactly Does NVIDIA Do, and Why Should You Care? 
+Headline ID: 16b87bf8 
+Publication date: 2024-06-26 00:00:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec0632-509051bb4c0f4dee17afaef7;2d14e88e-42aa-4e22-bca9-e422c928555b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 02:09:52, fail count: 2): 
+Ticker: AAPL 
+Headline: What Exactly Does NVIDIA Do, and Why Should You Care? 
+Headline ID: 16b87bf8 
+Publication date: 2024-06-26 00:00:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec0650-7c7919e059df0259790d6e51;f3f56d4b-499b-4535-8748-d6757556dbe1)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 02:52:51, fail count: 1): 
+Ticker: AAPL 
+Headline: Qualcomm Drops 21% in 2026 — Is BofA Right to Call It a Sell? 
+Headline ID: 36344d0a 
+Publication date: 2026-03-11 19:15:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec1063-1a39478d30bded4344a39456;d924fc5f-8981-4140-8cb4-4148b2012081)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 03:08:27, fail count: 1): 
+Ticker: AMZN 
+Headline: Amazon, Teladoc Health Makes Basic Healthcare More Convenient And Accessible With New Alexa-Powered Telehealth Calling Feature 
+Headline ID: 4c89465f 
+Publication date: 2022-02-28 12:56:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec140b-528d7e5a5735d5736300810b;f7e5475e-1773-49bc-bb8c-b1ecb1f49c14)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 03:08:57, fail count: 2): 
+Ticker: AMZN 
+Headline: Amazon, Teladoc Health Makes Basic Healthcare More Convenient And Accessible With New Alexa-Powered Telehealth Calling Feature 
+Headline ID: 4c89465f 
+Publication date: 2022-02-28 12:56:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec1429-33f7f8872f7476f200023df9;d28731b7-e79d-4835-978d-9d868feb6736)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+
+ 
+Traceback information (25-04-2026 at 04:58:02, fail count: 1): 
+Ticker: MSFT 
+Headline: Nvidia CEO Jensen Huang earnings call namechecked Saudi AI company Humain three times. Here’s why 
+Headline ID: 00b23925 
+Publication date: 2025-11-19 22:48:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec2dba-4c2533f443374d463a5a8f9c;54cdfb7b-c1a2-4e65-a3d3-4b80720d7a98)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 07:40:05, fail count: 1): 
+Ticker: AMD 
+Headline: Qualcomm Acquires Ventana to Advance RISC-V CPUs and Cut Arm Reliance 
+Headline ID: d2113c90 
+Publication date: 2025-12-11 12:23:32 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec53b4-3c108223793bef8e46c133f1;20d98d70-25cd-48f0-8ab9-5d87398973c5)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 07:50:08, fail count: 1): 
+Ticker: AMD 
+Headline: AMD CEO and global tech leader Lisa Su to headline upcoming Presidential Lecture on what will power AI era 
+Headline ID: 1da271b7 
+Publication date: 2026-02-17 11:26:13 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ec5610-3da8e03d0e7729cb71cafcb1;b357a33c-7ca8-4cad-a0f3-76581e8ccb4d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 14:42:26, fail count: 1): 
+Ticker: COP 
+Headline: Piper Sandler Raises Black Stone Minerals (BSM) Price Target to $14 
+Headline ID: 2b825432 
+Publication date: 2026-04-13 02:18:00 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ecb6b2-14f0ce1c1e176c9661f67c87;ec73c24a-73f6-46a2-bfe3-e7274cf21be5)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 16:21:25, fail count: 1): 
+Ticker: DIS 
+Headline: The Coca‑Cola Company Kicks Off the Coca-Cola FC Academy, Aiming to Power Future Careers in Sports & Beyond 
+Headline ID: 404b205e 
+Publication date: 2025-12-03 22:07:53 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69eccde5-0d9812612549eb933f2e0c55;f826a034-0be4-4333-9d19-733ecc703eff)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+ 
+Traceback information (25-04-2026 at 17:47:11, fail count: 1): 
+Ticker: COST 
+Headline: XLP vs. RSPS: Which Consumer Staples ETF Is the Better Buy for Long-Term Investors? 
+Headline ID: ae67e163 
+Publication date: 2026-04-03 05:39:25 
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/WIP/probability_assignment_v2.py", line 43, in add_probabilities
+    result = client.text_classification(headline, model="ProsusAI/finbert")
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 1946, in text_classification
+    response = self._inner_post(request_parameters)
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/inference/_client.py", line 282, in _inner_post
+    hf_raise_for_status(response)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/maximilian_morrel/Programming/git/algorithmic-trading/notebooks/data_team/phase3/env/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 877, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Server error '500 Internal Server Error' for url 'https://router.huggingface.co/hf-inference/models/ProsusAI/finbert' (Request ID: Root=1-69ece1ff-5a3c690654e2b1e464f38916;30def796-1ce6-4451-81a6-c4b3c15b91a9)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
