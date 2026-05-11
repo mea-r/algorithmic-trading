@@ -1,0 +1,5 @@
+model,features,accuracy,auc
+Logistic Regression,Technical + Sentiment,0.5243304608080912,0.5119908513247623
+XGBoost,Technical only,0.5198926673202952,0.5170689981982011
+XGBoost,Technical + Sentiment,0.5222663708137675,0.5149384495477399
+XGBoost,Technical + Sentiment + has_news,0.5194798493214304,0.513841500014869
